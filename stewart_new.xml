@@ -1,0 +1,276 @@
+<mujoco model="stewart">
+  <compiler angle="degree" meshdir="binglian" autolimits="true"/>
+  <option timestep="0.001" integrator="implicitfast" solver="Newton" iterations="100" tolerance="1e-10"/>
+  <visual>
+    <scale framelength="0.1" framewidth="0.005"/>
+  </visual>
+
+  <asset>
+    <mesh file="base.stl"/>
+    <mesh file="ballj1.stl"/>
+    <mesh file="diangangbenti.stl"/>
+    <mesh file="huosaigan.stl" />
+    <mesh file="platform.stl" />
+
+    <mesh file="shensuobi.stl" />
+
+
+    <mesh name="hole_visual" file="21.STL"/>
+    <mesh name="hole_col_001" file="part_001.obj"/>
+    <mesh name="hole_col_002" file="part_002.obj"/>
+    <mesh name="hole_col_003" file="part_003.obj"/>
+    <mesh name="hole_col_004" file="part_004.obj"/>
+    <mesh name="hole_col_005" file="part_005.obj"/>
+    <mesh name="hole_col_006" file="part_006.obj"/>
+    <mesh name="hole_col_007" file="part_007.obj"/>
+    <mesh name="hole_col_008" file="part_008.obj"/>
+    <mesh name="hole_col_009" file="part_009.obj"/>
+    <mesh name="hole_col_010" file="part_010.obj"/>
+    <mesh name="hole_col_011" file="part_011.obj"/>
+    <mesh name="hole_col_012" file="part_012.obj"/>
+    <mesh name="hole_col_013" file="part_013.obj"/>
+    <mesh name="hole_col_014" file="part_014.obj"/>
+    <mesh name="hole_col_015" file="part_015.obj"/>
+    <mesh name="hole_col_016" file="part_016.obj"/>
+    <mesh name="hole_col_017" file="part_017.obj"/>
+    <mesh name="hole_col_018" file="part_018.obj"/>
+    <mesh name="hole_col_019" file="part_019.obj"/>
+    <mesh name="hole_col_020" file="part_020.obj"/>
+    <mesh name="hole_col_021" file="part_021.obj"/>
+    <mesh name="hole_col_022" file="part_022.obj"/>
+    <mesh name="hole_col_023" file="part_023.obj"/>
+    <mesh name="hole_col_024" file="part_024.obj"/>
+    <mesh name="hole_col_025" file="part_025.obj"/>
+    <mesh name="hole_col_026" file="part_026.obj"/>
+    <mesh name="hole_col_027" file="part_027.obj"/>
+    <mesh name="hole_col_028" file="part_028.obj"/>
+    <mesh name="hole_col_029" file="part_029.obj"/>
+    <mesh name="hole_col_030" file="part_030.obj"/>
+    <mesh name="hole_col_031" file="part_031.obj"/>
+    <mesh name="hole_col_032" file="part_032.obj"/>
+    <mesh name="hole_col_033" file="part_033.obj"/>
+    <mesh name="hole_col_034" file="part_034.obj"/>
+    <mesh name="hole_col_035" file="part_035.obj"/>
+    <mesh name="hole_col_036" file="part_036.obj"/>
+    <mesh name="hole_col_037" file="part_037.obj"/>
+  </asset>
+
+
+
+  <worldbody>
+    <!-- 固定底座 -->
+    <body name="base" pos="0 0 0" >
+      <geom type="mesh" mesh="base"  rgba="0 0 1 1" contype="0" conaffinity="0"/>
+
+      <body name="balljointmoxing1" pos="0.19319 0.05176 0.01">
+        <geom type="mesh" mesh="ballj1" euler="0 -90 0" rgba="1 1 0.4 1" contype="0" conaffinity="0" />
+
+        <body name="diangangbenti1" pos="0 0 0.0085">
+          <geom type="mesh" mesh="diangangbenti" euler="0 0 0" rgba="0.4 1 0.4 1" mass="4.5" contype="0" conaffinity="0"/>
+          <joint name="leg1_base_ball" type="ball" range="0 30" damping="0.05"/>
+          <site name="balljoint1_site" pos="0 0 0" size="0.009" rgba="0 0 1 1"/>
+            <body name="gan1" pos="0 0 0.251">
+              <joint name="leg1_slide" type="slide" axis="0 0 1" range="0 0.200" damping="100"/>
+              <geom type="mesh" mesh="huosaigan" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="1" contype="0" conaffinity="0"/>
+              <site name="leg1_tip" pos="0 0 0.298" size="0.02" rgba="1 0 1 1"/>
+            </body>
+        </body>
+      </body>
+
+      <body name="balljointmoxing2" pos="0.14142 0.14142 0.01">
+        <geom type="mesh" mesh="ballj1" euler="0 -90 0" rgba="2 0.4 0.4 1" contype="0" conaffinity="0" />
+        <body name="diangangbenti2" pos="0 0 0.0085">
+          <geom type="mesh" mesh="diangangbenti" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="4.5" contype="0" conaffinity="0"/>
+          <joint name="leg2_base_ball" type="ball" range="0 30" damping="0.05"/>
+          <site name="balljoint2_site" pos="0 0 0" size="0.009" rgba="0 0 1 1"/>
+            <body name="gan2" pos="0 0 0.251">
+              <joint name="leg2_slide" type="slide" axis="0 0 1" range="0 0.200" damping="100"/>
+              <geom type="mesh" mesh="huosaigan" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="1" contype="0" conaffinity="0"/>
+              <site name="leg2_tip" pos="0 0 0.298" size="0.01" rgba="0 0 1 1"/>
+            </body>
+        </body>
+      </body>
+
+      <body name="balljointmoxing3" pos="-0.14142 0.14142 0.01">
+        <geom type="mesh" mesh="ballj1" euler="0 -90 0" rgba="0.4 0.4 0.4 1" contype="0" conaffinity="0" />
+        <body name="diangangbenti3" pos="0 0 0.0085">
+          <geom type="mesh" mesh="diangangbenti" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="4.5" contype="0" conaffinity="0"/>
+          <joint name="leg3_base_ball" type="ball" range="0 30" damping="0.05"/>
+          <site name="balljoint3_site" pos="0 0 0" size="0.009" rgba="0 0 1 1"/>
+            <body name="gan3" pos="0 0 0.251">
+              <joint name="leg3_slide" type="slide" axis="0 0 1" range="0 0.200" damping="100"/>
+              <geom type="mesh" mesh="huosaigan" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="1" contype="0" conaffinity="0"/>
+              <site name="leg3_tip" pos="0 0 0.298" size="0.01" rgba="0 0 1 1"/>
+            </body>
+        </body>
+      </body>
+
+      <body name="balljointmoxing4" pos="-0.19319 0.05176 0.01">
+        <geom type="mesh" mesh="ballj1" euler="0 -90 0" rgba="0.4 0.4 0.4 1" contype="0" conaffinity="0" />
+        <body name="diangangbenti4" pos="0 0 0.0085">
+          <geom type="mesh" mesh="diangangbenti" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="4.5" contype="0" conaffinity="0"/>
+          <joint name="leg4_base_ball" type="ball" range="0 30" damping="0.05"/>
+          <site name="balljoint4_site" pos="0 0 0" size="0.009" rgba="0 0 1 1"/>
+            <body name="gan4" pos="0 0 0.251">
+              <joint name="leg4_slide" type="slide" axis="0 0 1" range="0 0.200" damping="100"/>
+              <geom type="mesh" mesh="huosaigan" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="1" contype="0" conaffinity="0"/>
+              <site name="leg4_tip" pos="0 0 0.298" size="0.01" rgba="0 0 1 1"/>
+            </body>
+        </body>
+      </body>
+
+      <body name="balljointmoxing5" pos="0.05176 -0.19319 0.01">
+        <geom type="mesh" mesh="ballj1" euler="0 -90 0" rgba="0.4 0.4 0.4 1" contype="0" conaffinity="0" />
+        <body name="diangangbenti5" pos="0 0 0.0085">
+          <geom type="mesh" mesh="diangangbenti" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="4.5" contype="0" conaffinity="0"/>
+          <joint name="leg5_base_ball" type="ball" range="0 30" damping="0.05"/>
+          <site name="balljoint5_site" pos="0 0 0" size="0.009" rgba="0 0 1 1"/>
+            <body name="gan5" pos="0 0 0.251">
+              <joint name="leg5_slide" type="slide" axis="0 0 1" range="0 0.200" damping="100"/>
+              <geom type="mesh" mesh="huosaigan" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="1" contype="0" conaffinity="0"/>
+              <site name="leg5_tip" pos="0 0 0.298" size="0.01" rgba="0 0 1 1"/>
+            </body>
+        </body>
+      </body>
+
+      <body name="balljointmoxing6" pos="-0.05176 -0.19319 0.01">
+        <geom type="mesh" mesh="ballj1" euler="0 -90 0" rgba="0.4 0.4 0.4 1" contype="0" conaffinity="0" />
+        <body name="diangangbenti6" pos="0 0 0.0085">
+          <geom type="mesh" mesh="diangangbenti" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="4.5" contype="0" conaffinity="0"/>
+          <joint name="leg6_base_ball" type="ball" range="0 30" damping="0.05"/>
+          <site name="balljoint6_site" pos="0 0 0" size="0.009" rgba="0 0 1 1"/>
+            <body name="gan6" pos="0 0 0.251">
+              <joint name="leg6_slide" type="slide" axis="0 0 1" range="0 0.200" damping="100"/>
+              <geom type="mesh" mesh="huosaigan" euler="0 0 0" rgba="0.4 0.4 0.4 1" mass="1" contype="0" conaffinity="0"/>
+              <site name="leg6_tip" pos="0 0 0.298" size="0.01" rgba="0 0 1 1"/>
+            </body>
+        </body>
+      </body>
+
+    </body>
+
+    <body name="platform" pos="0 0 0.6" euler="0 0 0">
+      <site name="center" pos="0 0 0" size="0.006" rgba="1 0 0 1"/>
+      <joint name="platform_free" type="free"/>
+      <geom type="mesh" mesh="platform" euler="0 0 60" rgba="0 0 1 1" mass="5.68"/>
+
+      <site name="shangjia1_tip" pos="0.15455 -0.04141 -0.0185" size="0.01" rgba="1 1 0 1"/>
+      <site name="shangjia2_tip" pos="0.04141 0.15455 -0.0185" size="0.01" rgba="1 0 0 1"/>
+      <site name="shangjia3_tip" pos="-0.04141 0.15455 -0.0185" size="0.01" rgba="1 0 0 1"/>
+      <site name="shangjia4_tip" pos="-0.15455 -0.04141 -0.0185" size="0.01" rgba="1 0 0 1"/>
+      <site name="shangjia5_tip" pos="0.1134 -0.11314 -0.0185" size="0.01" rgba="1 0 0 1"/>
+      <site name="shangjia6_tip" pos="-0.11314 -0.11314 -0.0185" size="0.01" rgba="1 0 0 1"/>
+
+        <body name="shensuobi1" pos="0 -0.21 0.002" euler="0 0 90">
+          <inertial pos="0 0 0" mass="1" diaginertia="0.001 0.001 0.001"/>
+          <geom type="mesh" mesh="shensuobi" rgba="0.8 0.8 0.8 1" contype="0" conaffinity="0"/>
+          <body name="hole_mount" pos="-0.295 0 0.158" euler="0 0 -90" >
+            <body name="tool_payload" pos="0 0 0">
+              <inertial pos="0 0 0" mass="1" diaginertia="0.001 0.001 0.001"/>
+              <site name="tool" pos="0 0.02 0" euler="90 0 0" size="0.005" rgba="0 1 0 1" />
+              <site name="ft_sensor_site" pos="0 0.02 0" euler="90 0 0" size="0.005" rgba="0 1 0 1"/>
+              <geom type="mesh" mesh="hole_visual" rgba="0.8 0.8 0.8 1" contype="0" conaffinity="0" density="0" />
+              <geom type="mesh" mesh="hole_col_001" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_002" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_003" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_004" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_005" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_006" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_007" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_008" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_009" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_010" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_011" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_012" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_013" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_014" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_015" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_016" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_017" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_018" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_019" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_020" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_021" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_022" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_023" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_024" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_025" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_026" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_027" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_028" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_029" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_030" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_031" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_032" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_033" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_034" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_035" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_036" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              <geom type="mesh" mesh="hole_col_037" contype="1" conaffinity="1" group="3" rgba="1 0 0 0.18" density="0"/>
+              </body>
+          </body>
+        </body>
+
+        <body name="shensuobi2" pos="0.181865 0.105 0.002" euler="0 0 210">
+          <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+          <geom type="mesh" mesh="shensuobi" rgba="0.8 0.8 0.8 1" contype="0" conaffinity="0"/>
+          <body name="hole_mount2" pos="-0.295 0 0.158" euler="0 0 -90" >
+            <body name="tool_payload2" pos="0 0 0">
+              <inertial pos="0 0 0" mass="1" diaginertia="0.001 0.001 0.001"/>
+              <site name="tool2" pos="0 0.02 0" euler="90 0 0" size="0.005" rgba="0 1 0 1" />
+            </body>
+          </body>
+        </body>
+
+        <body name="shensuobi3" pos="-0.181865 0.105 0.002" euler="0 0 330">
+          <inertial pos="0 0 0" mass="0.1" diaginertia="0.001 0.001 0.001"/>
+          <geom type="mesh" mesh="shensuobi" rgba="0.8 0.8 0.8 1" contype="0" conaffinity="0"/>
+          <body name="hole_mount3" pos="-0.295 0 0.158" euler="0 0 -90" >
+            <body name="tool_payload3" pos="0 0 0">
+              <inertial pos="0 0 0" mass="1" diaginertia="0.001 0.001 0.001"/>
+              <site name="tool3" pos="0 0.02 0" euler="90 0 0" size="0.005" rgba="0 1 0 1" />
+            </body>
+          </body>
+        </body>
+
+
+        
+
+    </body>
+
+  </worldbody>
+
+  <sensor>
+    <force name="ft_force" site="ft_sensor_site"/>
+    <torque name="ft_torque" site="ft_sensor_site"/>
+  </sensor>
+
+
+  <actuator>
+    <position name="leg1_motor" joint="leg1_slide" kp="50000" dampratio="2" ctrlrange="0 0.2" forcerange="-3000 3000"/>
+    <position name="leg2_motor" joint="leg2_slide" kp="50000" dampratio="2" ctrlrange="0 0.2" forcerange="-3000 3000"/>
+    <position name="leg3_motor" joint="leg3_slide" kp="50000" dampratio="2" ctrlrange="0 0.2" forcerange="-3000 3000"/>
+    <position name="leg4_motor" joint="leg4_slide" kp="50000" dampratio="2" ctrlrange="0 0.2" forcerange="-3000 3000"/>
+    <position name="leg5_motor" joint="leg5_slide" kp="50000" dampratio="2" ctrlrange="0 0.2" forcerange="-3000 3000"/>
+    <position name="leg6_motor" joint="leg6_slide" kp="50000" dampratio="2" ctrlrange="0 0.2" forcerange="-3000 3000"/>
+    <velocity name="leg1_vel_motor" joint="leg1_slide" kv="5000" ctrlrange="-0.2 0.2" forcerange="-3000 3000"/>
+    <velocity name="leg2_vel_motor" joint="leg2_slide" kv="5000" ctrlrange="-0.2 0.2" forcerange="-3000 3000"/>
+    <velocity name="leg3_vel_motor" joint="leg3_slide" kv="5000" ctrlrange="-0.2 0.2" forcerange="-3000 3000"/>
+    <velocity name="leg4_vel_motor" joint="leg4_slide" kv="5000" ctrlrange="-0.2 0.2" forcerange="-3000 3000"/>
+    <velocity name="leg5_vel_motor" joint="leg5_slide" kv="5000" ctrlrange="-0.2 0.2" forcerange="-3000 3000"/>
+    <velocity name="leg6_vel_motor" joint="leg6_slide" kv="5000" ctrlrange="-0.2 0.2" forcerange="-3000 3000"/>
+  </actuator>
+
+  <equality>
+    <connect name="leg1_top_connect" site1="leg1_tip" site2="shangjia1_tip" solref="0.005 1" solimp="0.95 0.99 0.001"/>
+    <connect name="leg2_top_connect" site1="leg2_tip" site2="shangjia2_tip" solref="0.005 1" solimp="0.95 0.99 0.001"/>
+    <connect name="leg3_top_connect" site1="leg3_tip" site2="shangjia3_tip" solref="0.005 1" solimp="0.95 0.99 0.001"/>
+    <connect name="leg4_top_connect" site1="leg4_tip" site2="shangjia4_tip" solref="0.005 1" solimp="0.95 0.99 0.001"/>
+    <connect name="leg5_top_connect" site1="leg5_tip" site2="shangjia5_tip" solref="0.005 1" solimp="0.95 0.99 0.001"/>
+    <connect name="leg6_top_connect" site1="leg6_tip" site2="shangjia6_tip" solref="0.005 1" solimp="0.95 0.99 0.001"/>
+  </equality>
+
+
+
+
+</mujoco>
