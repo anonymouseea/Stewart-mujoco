@@ -4,6 +4,14 @@
 
 > 当前主程序采用“积分导纳 + 状态机”完成恒力对接；仓库中同时保留了传统导纳、分数阶导纳和自适应导纳速度控制器，用于后续算法对比与真机迁移。
 
+## 仿真演示
+
+<p align="center">
+  <img src="assets/stewart_compliant_docking.gif" alt="Stewart 并联平台柔顺对接仿真演示" width="760">
+</p>
+
+<p align="center">Stewart 并联平台柔顺对接与姿态调整仿真</p>
+
 ## 控制流程
 
 ```mermaid
